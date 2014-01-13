@@ -15,7 +15,6 @@ development:
 test:
   adapter: postgresql
   database: velociraptor_test
-  database: db/test.sqlite3
   pool: 5
   timeout: 5000
 
