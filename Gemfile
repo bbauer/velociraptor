@@ -12,6 +12,7 @@ gem 'gattica', '0.6.2', git: 'https://github.com/chrisle/gattica.git'
 gem 'font-awesome-rails'
 gem 'httparty'
 gem 'oauth2'
+gem 'devise'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
