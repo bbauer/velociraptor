@@ -10,6 +10,8 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'gattica', '0.6.2', git: 'https://github.com/chrisle/gattica.git'
 gem 'font-awesome-rails'
+gem 'httparty'
+gem 'oauth2'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
@@ -26,4 +28,5 @@ group :development, :test do
   gem 'pry-theme'
   gem 'pry-debugger'
   gem 'awesome_print'
+  gem 'factory_girl_rails'
 end

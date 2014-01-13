@@ -1,6 +1,6 @@
 class Source::GoogleAnalytics::Client
-  START_DATE = Date.today
-  END_DATE = Date.today
+  START_DATE = Date.today.strftime("%Y-%m-%d")
+  END_DATE = Date.today.strftime("%Y-%m-%d")
   DIMENSIONS = "browser"
 
   def initialize(client)
@@ -11,10 +11,14 @@ class Source::GoogleAnalytics::Client
     google_analytics.get(
       start_date: options[:start_date] || START_DATE,
       end_date: options[:end_date] || END_DATE,
-      dimensions: options[:dimensions] || DIMENSIONS,
-      metrics: options[:metrics],
-      sort: options[:sort]
+      dimensions: [options[:dimensions] || DIMENSIONS],
+      metrics: [options[:metrics]],
+      sort: [options[:sort]]
     )
+  end
+
+  def magaged_accounts
+    HTTParty.get("https://www.googleapis.com/analytics/v3/management/accounts", options)
   end
 
 protected
@@ -33,6 +37,23 @@ protected
   end
 
   def token
-    Velociraptor::Application.config.google_analytics_token
+    #Velociraptor::Application.config.google_analytics_token
+    "AIzaSyA-aBUGmEjBMg_ZTyVw3CfzldPts_aRCyE"
+  end
+
+  def auth
+    { username: source.email, password: source.password }
+  end
+
+  def options
+    { basic_auth: auth }
+  end
+
+  def password
+    "notasecret"
+  end
+
+  def client_id
+    "846421549419.apps.googleusercontent.com"
   end
 end

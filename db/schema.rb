@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140113044115) do
+ActiveRecord::Schema.define(version: 20140113051633) do
 
   create_table "clients", force: true do |t|
     t.string   "name"
@@ -24,6 +24,14 @@ ActiveRecord::Schema.define(version: 20140113044115) do
     t.string   "email"
     t.string   "password"
     t.string   "profile_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "twitters", force: true do |t|
+    t.string   "username"
+    t.string   "password"
+    t.integer  "client_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
