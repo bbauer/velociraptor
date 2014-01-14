@@ -7,6 +7,7 @@
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
   </head>
+
   <body>
     <div <%= 'id=dark-header' if user_signed_in? %> class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
@@ -31,13 +32,13 @@
             </div>
           </div>
         <% else %>
-          <div class="navbar-collapse collapse">
+          <div class="navbar-collapse collapse sign-in">
             <%= form_for("user", :url => user_session_path, html: { class: "navbar-form navbar-right" }) do |f| %>
               <div class="form-group">
-                <%= f.text_field :email, class: "form-control", placeholder: "Email" %>
+                <%= f.text_field :email, class: "form-control email", placeholder: "Email" %>
               </div>
               <div class="form-group">
-                <%= f.password_field :password, class: "form-control", placeholder: "Password" %>
+                <%= f.password_field :password, class: "form-control password", placeholder: "Password" %>
               </div>
               <%= f.submit 'Sign in', class: "btn btn-primary" %>
             <% end %>
@@ -50,6 +51,7 @@
       <div class="jumbotron">
         <div class="container">
           <%= image_tag("Map.png") %>
+
           <h1>SEO Software<br /><em>for</em> Awesome People</h1>
           <p>Bacon ipsum dolor sit amet cow pancetta biltong, ham strip steak t-bone shankle sausage. Frankfurter t-bone tenderloin drumstick.</p>
           <p><a class="btn btn-primary btn-lg" role="button">Learn more &raquo;</a></p>

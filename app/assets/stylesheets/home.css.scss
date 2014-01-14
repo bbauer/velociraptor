@@ -44,7 +44,7 @@
 
   img {
     float:right;
-    padding:50px 100px 0;
+    padding:50px 60px 0;
   }
 
   h1 {
@@ -81,12 +81,23 @@
   }
 }
 
-.form-control {
-  border: 1px solid #ddd;
-}
 
 footer {
   color:#bbb;
   background:none;
   text-align:center;
+}
+
+.form-control {
+  border: 1px solid #ddd;
+}
+
+.sign-in {
+  .password {
+    width:130px;
+  }
+
+  .email {
+    width:180px;
+  }
 }
