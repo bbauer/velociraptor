@@ -27,8 +27,12 @@
         <% if user_signed_in? %>
           <div class="btn-toolbar pull-right top-nav">
             <div class="btn-group">
+              <div class="btn btn-primary">
+                <i class="fa fa-user"></i> Hello <%= current_user.first_name %>!
+              </div>
+
               <%= link_to('<i class="fa fa-sign-out"></i> Logout'.html_safe, destroy_user_session_path, method: :delete, class: "btn btn-inverse") %>
-              <%= link_to('<i class="fa fa-cog"></i> Settings'.html_safe, "#", class: "btn btn-inverse") %>
+              <%= link_to('<i class="fa fa-cog"></i> Settings'.html_safe, admin_dashboard_path, class: "btn btn-inverse") %>
             </div>
           </div>
         <% else %>
@@ -55,6 +59,19 @@
           <h1>SEO Software<br /><em>for</em> Awesome People</h1>
           <p>Bacon ipsum dolor sit amet cow pancetta biltong, ham strip steak t-bone shankle sausage. Frankfurter t-bone tenderloin drumstick.</p>
           <p><a class="btn btn-primary btn-lg" role="button">Learn more &raquo;</a></p>
+        </div>
+      </div>
+    <% else %>
+      <div id="dashboard-nav">
+        <div class="container">
+          <nav>
+            <ul>
+              <li><%= link_to "<i class='fa fa-cogs'></i> Dashboard".html_safe, dashboard_path, class: "active" %></li>
+              <li><%= link_to "<i class='fa fa-bar-chart-o'></i> Metrics".html_safe, dashboard_path, class: "" %></li>
+              <li><%= link_to "<i class='fa fa-group'></i> Social Analysis".html_safe, dashboard_path, class: "" %></li>
+              <li><%= link_to "<i class='fa fa-clipboard'></i> Reports".html_safe, dashboard_path, class: "" %></li>
+            </ul>
+          </nav>
         </div>
       </div>
     <% end %>

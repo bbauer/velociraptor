@@ -14,7 +14,7 @@
 
     var options = {
       legend: { position: "bottom" },
-      backgroundColor: "#f9f9f9",
+      backgroundColor: "#ffffff",
       slices: {
         0: { color: '#E67E22' },
         1: { color: '#3498DB' },
@@ -30,15 +30,22 @@
 </script>
 
 <div id="dashboard">
-  <div class="row">
-    <div class="col-md-12">
-      <h1><i class="fa fa-tachometer"></i> Dashboard</h1>
-    </div>
-  </div>
-
   <div class="row dash">
-    <div class="col-md-12 velocibox center">
-      <!--<div id="piechart"></div>-->
+    <div class="col-md-8">
+      <%#<div id="piechart"></div>%>
+    </div>
+
+    <div class="col-md-4">
+      <div class="login-form">
+        <div class="form-group">
+          <textarea class="form-control" placeholder="What's on your mind?"></textarea>
+        </div>
+
+        <a class="btn btn-primary btn-block" href="#">Post</a>
+      </div>
+
+      <div id="collabofeed">
+      </div>
     </div>
   </div>
 </div>

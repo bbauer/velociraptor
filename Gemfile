@@ -13,6 +13,7 @@ gem 'font-awesome-rails'
 gem 'httparty'
 gem 'oauth2'
 gem 'devise'
+gem 'activeadmin', github: 'gregbell/active_admin'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
