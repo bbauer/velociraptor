@@ -1,7 +1,14 @@
-h1 {
-  color:#444;
+#dashboard {
+  h1 {
+    text-align:center;
+    color:#444;
 
-  i {
-    color:#aedaa3;
+    i {
+      color:#1abc9c;
+    }
+  }
+
+  .dash {
+    margin-top:20px;
   }
 }

@@ -5,6 +5,7 @@
 .navbar-inverse {
   background:#fff;
   border:none;
+  border-bottom:1px solid #ddd;
   padding:8px 0;
 
   .navbar-nav>li>a,
@@ -15,16 +16,12 @@
     font-weight:100;
   }
 
-  i {
-    color:#1abc9c;
-  }
-
   .navbar-brand {
     text-shadow:none;
     border:none;
 
-    img {
-      height: 30px;
+    i {
+      color:#1abc9c;
     }
   }
 
@@ -41,7 +38,7 @@
 
 .jumbotron {
   background:url("graph.png") #222;
-  padding:90px 0 30px;
+  padding:0 0 27px;
   margin-bottom:10px;
   color:#999;
 
@@ -61,7 +58,7 @@
   }
 
   h1, p {
-    margin-left:60px;
+    margin-left:10px;
     width:55%;
   }
 }
