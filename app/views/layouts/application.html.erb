@@ -27,7 +27,7 @@
           <div class="btn-toolbar pull-right top-nav">
             <div class="btn-group">
               <%= link_to('<i class="fa fa-sign-out"></i> Logout'.html_safe, destroy_user_session_path, method: :delete, class: "btn btn-inverse") %>
-              <%= link_to('<i class="fa fa-cog"></i> Settings'.html_safe, destroy_user_session_path, method: :delete, class: "btn btn-inverse") %>
+              <%= link_to('<i class="fa fa-cog"></i> Settings'.html_safe, "#", class: "btn btn-inverse") %>
             </div>
           </div>
         <% else %>
