@@ -13,6 +13,14 @@
     font-size:200%%;
     font-family: 'Open Sans', sans-serif;
     font-weight:100;
+
+    em {
+      font-size:80%;
+      position:relative;
+      top:-4px;
+      left:-5px;
+      color:#d6d6d6;
+    }
   }
 
   .navbar-brand {
