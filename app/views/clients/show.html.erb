@@ -38,7 +38,7 @@
     <div class="col-md-4 right-col">
       <div class="login-form">
         <%= form_for("post", url: posts_path, method: :post) do |f| %>
-          <div class="form-group">
+          <div class="form-group comment-field">
             <%= f.text_area :comment, class: "form-control", placeholder: "Post a Note" %>
           </div>
 
