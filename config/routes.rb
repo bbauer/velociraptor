@@ -3,8 +3,6 @@ Velociraptor::Application.routes.draw do
   ActiveAdmin.routes(self)
 
   get "home/index"
-  #get "dashboard" => "dashboard#index"
-  get "/dashboard/:client_id", to: "dashboard#index"
 
   resources :posts, only: [:create, :destroy]
   resources :clients, only: [:show]
@@ -51,7 +49,7 @@ Velociraptor::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'

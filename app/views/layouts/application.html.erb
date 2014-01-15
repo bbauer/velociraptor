@@ -32,7 +32,9 @@
               </div>
 
               <%= link_to('<i class="fa fa-sign-out"></i> Logout'.html_safe, destroy_user_session_path, method: :delete, class: "btn btn-inverse") %>
-              <%= link_to('<i class="fa fa-cog"></i> Settings'.html_safe, admin_dashboard_path, class: "btn btn-inverse") %>
+              <% if current_user.admin %>
+                <%= link_to('<i class="fa fa-cog"></i> Settings'.html_safe, admin_dashboard_path, class: "btn btn-inverse") %>
+              <% end %>
             </div>
           </div>
         <% else %>
