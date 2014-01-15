@@ -1,0 +1,9 @@
+<% @milestones.each do |milestone| %>
+  <div class="velocibox <%= milestone.status %>">
+    <label class="checkbox" for="checkbox1">
+      <input type="checkbox" value="" id="checkbox1" data-toggle="checkbox">
+    </label>
+
+    <%= milestone.title %>
+  </div>
+<% end %>

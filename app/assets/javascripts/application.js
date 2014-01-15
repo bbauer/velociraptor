@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require flatui-checkbox
 //= require jquery.dataTables
 //= require raphael-min
 //= require morris

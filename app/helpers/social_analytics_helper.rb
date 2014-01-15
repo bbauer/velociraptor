@@ -1,0 +1,2 @@
+module SocialAnalyticsHelper
+end

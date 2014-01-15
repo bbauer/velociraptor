@@ -1,4 +1,4 @@
-$ ->
+$(document).on 'ready page:load', ->
   #new Morris.Area(
     #element: "chart"
 

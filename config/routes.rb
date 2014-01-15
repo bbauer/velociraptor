@@ -5,7 +5,12 @@ Velociraptor::Application.routes.draw do
   get "home/index"
 
   resources :posts, only: [:create, :destroy]
-  resources :clients, only: [:show]
+  resources :clients, only: [:show] do
+    resources :milestones
+    resources :metrics, only: [:index]
+    resources :social_analytics, only: [:index]
+    resources :reports, only: [:index, :show]
+  end
 
   root to: 'home#index'
 

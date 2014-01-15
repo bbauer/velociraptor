@@ -70,10 +70,11 @@
 
           <nav>
             <ul>
-              <li><%= link_to "<i class='fa fa-cogs'></i> Dashboard".html_safe, client_path(@client), class: "active" %></li>
-              <li><%= link_to "<i class='fa fa-bar-chart-o'></i> Metrics".html_safe, client_path(@client), class: "" %></li>
-              <li><%= link_to "<i class='fa fa-group'></i> Social Analysis".html_safe, client_path(@client), class: "" %></li>
-              <li><%= link_to "<i class='fa fa-clipboard'></i> Reports".html_safe, client_path(@client), class: "" %></li>
+              <li><%= active_link_to "<i class='fa fa-cogs'></i> Dashboard".html_safe, client_path(@client), active: :exclusive %></li>
+              <li><%= active_link_to "<i class='fa fa-bar-chart-o'></i> Metrics".html_safe, client_metrics_path(@client) %></li>
+              <li><%= active_link_to "<i class='fa fa-group'></i> Social Analysis".html_safe, client_social_analytics_path(@client) %></li>
+              <li><%= active_link_to "<i class='fa fa-group'></i> Milestones".html_safe, client_milestones_path(@client) %></li>
+              <li><%= active_link_to "<i class='fa fa-clipboard'></i> Reports".html_safe, client_reports_path(@client) %></li>
             </ul>
           </nav>
         </div>

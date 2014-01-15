@@ -14,6 +14,7 @@ gem 'httparty'
 gem 'oauth2'
 gem 'devise'
 gem 'activeadmin', github: 'gregbell/active_admin'
+gem 'active_link_to'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
@@ -31,6 +32,10 @@ group :development, :test do
   gem 'pry-debugger'
   gem 'awesome_print'
   gem 'factory_girl_rails'
+end
+
+group :staging, :production do
+  gem 'rails_12factor'
 end
 
 ruby "2.0.0"

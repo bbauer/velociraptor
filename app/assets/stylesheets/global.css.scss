@@ -138,7 +138,7 @@ p {
     a {
       border-top-right-radius: 4px;
       border-top-left-radius: 4px;
-      background:#E67E22;
+      background:#F1C40F;
       border-right:none;
     }
   }
@@ -182,7 +182,8 @@ p {
     background:#20D3AF;
   }
 
-  a.active {
+  a.active,
+  li:last-child a.active {
     background:#2ECC71;
     background:#fff;
     color:#1abc9c;
@@ -257,6 +258,18 @@ p {
     clear:both;
     margin:20px 0 0;
     padding:0;
+  }
+}
+
+.dash {
+  h4 {
+    @extend %round;
+    background:#444;
+    color:#eee;
+    padding:10px 20px;
+    margin-top:0;
+    text-align:center;
+    display:none;
   }
 }
 
