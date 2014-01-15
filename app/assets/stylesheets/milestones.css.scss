@@ -1,3 +1,57 @@
-// Place all the styles related to the milestones controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+$new: #3498DB;
+$started: #2ECC71;
+$finished: #1ABC9C;
+$accepted: #95A5A6;
+
+.milestone {
+  font-size:15px;
+  border:none;
+  border:1px solid #e6e6e6;
+  float:left;
+  clear:both;
+  width:100%;
+  color:#777;
+
+  .btn {
+    width:80px;
+    padding:5px;
+    color:#fff;
+  }
+
+}
+
+.milestone-title {
+  border-radius:3px;
+  padding:4px 12px 5px 10px;
+  background: $finished;
+  color:#fff;
+
+  i {
+    opacity:0.4;
+  }
+}
+/*.milestone-new {*/
+  /*.btn {*/
+    /*background: $new;*/
+  /*}*/
+/*}*/
+
+/*.milestone-started {*/
+  /*.btn {*/
+    /*background: $started;*/
+  /*}*/
+/*}*/
+
+/*.milestone-finished {*/
+  /*.btn {*/
+    /*background: $finished;*/
+  /*}*/
+/*}*/
+
+/*.milestone-accepted {*/
+  /*color:#bbb;*/
+
+  /*.btn {*/
+    /*background: $accepted;*/
+  /*}*/
+/*}*/
