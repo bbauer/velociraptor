@@ -172,10 +172,18 @@ p {
     border-right:3px solid #16A085;
   }
 
+  a:hover {
+    background:#20D3AF;
+  }
+
   a.active {
     background:#2ECC71;
     background:#fff;
     color:#1abc9c;
+  }
+
+  a.active:hover {
+    background:#fff;
   }
 }
 
