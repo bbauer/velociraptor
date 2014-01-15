@@ -64,12 +64,14 @@
     <% else %>
       <div id="dashboard-nav">
         <div class="container">
+          <!--<h1><i class="fa fa-tachometer"></i> <%= @client.name %></h1>-->
+
           <nav>
             <ul>
-              <li><%= link_to "<i class='fa fa-cogs'></i> Dashboard".html_safe, dashboard_path, class: "active" %></li>
-              <li><%= link_to "<i class='fa fa-bar-chart-o'></i> Metrics".html_safe, dashboard_path, class: "" %></li>
-              <li><%= link_to "<i class='fa fa-group'></i> Social Analysis".html_safe, dashboard_path, class: "" %></li>
-              <li><%= link_to "<i class='fa fa-clipboard'></i> Reports".html_safe, dashboard_path, class: "" %></li>
+              <li><%= link_to "<i class='fa fa-cogs'></i> Dashboard".html_safe, client_path(@client), class: "active" %></li>
+              <li><%= link_to "<i class='fa fa-bar-chart-o'></i> Metrics".html_safe, client_path(@client), class: "" %></li>
+              <li><%= link_to "<i class='fa fa-group'></i> Social Analysis".html_safe, client_path(@client), class: "" %></li>
+              <li><%= link_to "<i class='fa fa-clipboard'></i> Reports".html_safe, client_path(@client), class: "" %></li>
             </ul>
           </nav>
         </div>
