@@ -12,7 +12,7 @@ protected
   end
 
   def authenticate_admin!
-    unless request.env['PATH_INFO'] == "/admin/login" || request.env['PATH_INFO'] == "/admin/logout"
+    unless %{login logout}.include(request.env["PATH_INFO"])
       redirect_to client_path(current_user.client) unless current_user.admin
     end
   end
