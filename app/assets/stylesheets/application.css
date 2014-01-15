@@ -10,9 +10,11 @@
  *
  *= require bootstrap
  *= require flat-ui
+ *= require jquery.dataTables
  *= require_self
  *= require_tree .
  *= require global
  *= require dashboard
  *= require font-awesome
+ *= require morris
  */

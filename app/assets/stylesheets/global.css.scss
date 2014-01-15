@@ -138,7 +138,7 @@ p {
     a {
       border-top-right-radius: 4px;
       border-top-left-radius: 4px;
-      background:#F1C40F;
+      background:#E67E22;
       border-right:none;
     }
   }
@@ -166,6 +166,11 @@ p {
   a {
     background:#3498DB;
     border-right:3px solid #2980B9;
+  }
+
+  a {
+    background:#E67E22;
+    border-right:3px solid #D35400;
   }
 
   a {
@@ -253,4 +258,16 @@ p {
     margin:20px 0 0;
     padding:0;
   }
+}
+
+.chart {
+  @extend %round;
+  width:755px;
+  min-height:431px;
+  padding:35px;
+  margin-bottom:15px;
+}
+
+#datatable {
+  font-size:13px;
 }

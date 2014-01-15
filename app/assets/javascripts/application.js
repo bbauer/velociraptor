@@ -13,6 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require jquery.dataTables
+//= require raphael-min
+//= require morris
 //= require_tree .
 //= require bootstrap.min
 //= require chart
