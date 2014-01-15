@@ -236,3 +236,21 @@ p {
   }
 }
 
+.login {
+  padding:5px 55px 267px;
+
+  label {
+    color:#777;
+    font-size:15px;
+  }
+
+  a {
+    text-align:center;
+    color:#999;
+    font-size:13px;
+    display:block;
+    clear:both;
+    margin:20px 0 0;
+    padding:0;
+  }
+}
