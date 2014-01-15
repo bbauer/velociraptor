@@ -1,8 +1,12 @@
-<% @milestones.each do |milestone| %>
-  <div class="velocibox milestone milestone-<%= milestone.status_class %>">
-    <a href="#" class="btn btn-default pull-right"><%= milestone.status_button %></a>
-    <span class="milestone-title">
-      <i class="fa fa-check-circle-o"></i> <%= milestone.title %>
-    </span>
-  </div>
+<% if @milestones.present? %>
+  <% @milestones.each do |milestone| %>
+    <div class="velocibox milestone milestone-<%= milestone.status_class %>">
+      <a href="#" class="btn btn-default pull-right"><%= milestone.status_button %></a>
+      <span class="milestone-title">
+        <i class="fa fa-check-circle-o"></i> <%= milestone.title %>
+      </span>
+    </div>
+  <% end %>
+<% else %>
+  <div class="empty-data center">You've created no milestones...get to work!!!</div>
 <% end %>
