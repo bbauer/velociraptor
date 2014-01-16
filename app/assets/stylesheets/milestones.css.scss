@@ -30,28 +30,28 @@ $accepted: #95A5A6;
     opacity:0.4;
   }
 }
-/*.milestone-new {*/
-  /*.btn {*/
-    /*background: $new;*/
-  /*}*/
-/*}*/
+.milestone-new {
+  .btn {
+    background: $new;
+  }
+}
 
-/*.milestone-started {*/
-  /*.btn {*/
-    /*background: $started;*/
-  /*}*/
-/*}*/
+.milestone-started {
+  .btn {
+    background: $started;
+  }
+}
 
-/*.milestone-finished {*/
-  /*.btn {*/
-    /*background: $finished;*/
-  /*}*/
-/*}*/
+.milestone-finished {
+  .btn {
+    background: $finished;
+  }
+}
 
-/*.milestone-accepted {*/
-  /*color:#bbb;*/
+.milestone-accepted {
+  color:#bbb;
 
-  /*.btn {*/
-    /*background: $accepted;*/
-  /*}*/
-/*}*/
+  .btn {
+    background: $accepted;
+  }
+}
