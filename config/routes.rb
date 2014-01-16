@@ -12,6 +12,11 @@ Velociraptor::Application.routes.draw do
     resources :reports, only: [:index, :show]
   end
 
+  resources :agencies, only: [:show] do
+    resources :campaigns, only: [:index, :show] do
+    end
+  end
+
   root to: 'home#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

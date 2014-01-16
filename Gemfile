@@ -15,6 +15,7 @@ gem 'oauth2'
 gem 'devise'
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'active_link_to'
+gem 'friendly_id'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'

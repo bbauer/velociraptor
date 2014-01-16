@@ -17,16 +17,14 @@ class MilestonesController < ApplicationController
 
   def create
     @client = Client.find params[:client_id]
-    @milestone = Milestone.new(milestone_params)
-    @milestone.save
+    Milestone.create!(milestone_params)
 
     redirect_to client_milestones_path(@client)
   end
 
   def destroy
     @client = Client.find params[:client_id]
-    @milestone = Milestone.find(milestone_params)
-    @milestone.destroy
+    Milestone.find(milestone_params).destroy
 
     redirect_to client_path(@client)
   end

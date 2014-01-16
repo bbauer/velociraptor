@@ -34,6 +34,7 @@ p {
 
 #dark-header {
   background:#222;
+  border:none;
 
   .navbar-nav>li>a,
   .navbar-brand {
@@ -284,6 +285,8 @@ p {
   min-height:431px;
   padding:35px;
   margin-bottom:15px;
+  border:none;
+  background:#fff;
 }
 
 #datatable {
