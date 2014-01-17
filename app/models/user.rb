@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   belongs_to :client
+  belongs_to :agency
   has_many :posts
   has_many :milestones
 

@@ -2,36 +2,38 @@ class MilestonesController < ApplicationController
   before_filter :authenticate_user!
 
   def index
-    @client = Client.find params[:client_id]
-    @milestones = @client.milestones
+    @agency = Agency.find_by_slug(params[:agency_id])
+    @campaign = Campaign.find params[:campaign_id]
+    @milestones = @campaign.milestones
   end
 
   def show
-    @client = Client.find params[:client_id]
+    @agency = Agency.find_by_slug(params[:agency_id])
+    @campaign = Campaign.find params[:campaign_id]
   end
 
   def new
-    @client = Client.find params[:client_id]
+    @campaign = Campaign.find params[:campaign_id]
     @milestone = Milestone.new
   end
 
   def create
-    @client = Client.find params[:client_id]
+    @campaign = Campaign.find params[:campaign_id]
     Milestone.create!(milestone_params)
 
-    redirect_to client_milestones_path(@client)
+    redirect_to agency_campaign_milestones_path(@campaign.agency, @campaign)
   end
 
   def destroy
-    @client = Client.find params[:client_id]
+    @campaign = Campaign.find params[:campaign_id]
     Milestone.find(milestone_params).destroy
 
-    redirect_to client_path(@client)
+    redirect_to agency_campaign_milestones_path(@campaign.agency, @campaign)
   end
 
 private
 
   def milestone_params
-    params.require(:milestone).permit(:title, :description, :status, :client_id, :user_id)
+    params.require(:milestone).permit(:title, :description, :status, :campaign_id, :user_id)
   end
 end

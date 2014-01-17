@@ -5,21 +5,21 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
 
     if @post.save
-      redirect_to client_path(@post.client)
+      redirect_to agency_campaign_path(@post.campaign.agency, @post.campaign)
     else
-      redirect_to client_path(@post.client)
+      redirect_to agency_campaign_path(@post.campaign.agency, @post.campaign)
     end
   end
 
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-    redirect_to client_path(@post.client)
+    redirect_to agency_campaign_path(@post.campaign.agency, @post.campaign)
   end
 
 private
 
   def post_params
-    params.require(:post).permit(:comment, :client_id, :user_id)
+    params.require(:post).permit(:comment, :campaign_id, :user_id)
   end
 end

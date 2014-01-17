@@ -53,7 +53,7 @@
       </div>
     </div>
 
-    <% unless user_signed_in? %>
+    <% if !user_signed_in? %>
       <div class="jumbotron">
         <div class="container">
           <%= image_tag("Map.png") %>
@@ -63,16 +63,31 @@
           <p><a class="btn btn-primary btn-lg" role="button">Learn more &raquo;</a></p>
         </div>
       </div>
+    <% elsif @campaign.present? %>
+      <div id="dashboard-nav">
+        <div class="container">
+          <h1><%= @campaign.name %> <em>(<%= link_to(@agency.name, agency_path(@agency)) %>)</em></h1>
+
+          <nav>
+            <ul>
+              <li><%= active_link_to "<i class='fa fa-cogs'></i> Dashboard".html_safe, agency_campaign_path(@campaign.agency, @campaign), active: :exclusive %></li>
+              <li><%= active_link_to "<i class='fa fa-bar-chart-o'></i> Metrics".html_safe, agency_campaign_metrics_path(@campaign.agency, @campaign) %></li>
+              <li><%= active_link_to "<i class='fa fa-group'></i> Social Analysis".html_safe, agency_campaign_social_analytics_path(@campaign.agency, @campaign) %></li>
+              <li><%= active_link_to "<i class='fa fa-group'></i> Milestones".html_safe, agency_campaign_milestones_path(@campaign.agency, @campaign) %></li>
+              <li><%= active_link_to "<i class='fa fa-clipboard'></i> Reports".html_safe, agency_campaign_reports_path(@campaign.agency, @campaign) %></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
     <% else %>
       <div id="dashboard-nav">
         <div class="container">
+          <h1 ><%= @agency.name %></h1>
+
           <nav>
             <ul>
-              <li><%= active_link_to "<i class='fa fa-cogs'></i> Dashboard".html_safe, client_path(@client), active: :exclusive %></li>
-              <li><%= active_link_to "<i class='fa fa-bar-chart-o'></i> Metrics".html_safe, client_metrics_path(@client) %></li>
-              <li><%= active_link_to "<i class='fa fa-group'></i> Social Analysis".html_safe, client_social_analytics_path(@client) %></li>
-              <li><%= active_link_to "<i class='fa fa-group'></i> Milestones".html_safe, client_milestones_path(@client) %></li>
-              <li><%= active_link_to "<i class='fa fa-clipboard'></i> Reports".html_safe, client_reports_path(@client) %></li>
+              <li><%= active_link_to "<i class='fa fa-cogs'></i>Agency Dashboard".html_safe, agency_path(@agency), active: :exclusive %></li>
+              <li><%= active_link_to "<i class='fa fa-clipboard'></i>Agency Reports".html_safe, "#", active: :exclusive %></li>
             </ul>
           </nav>
         </div>
@@ -94,6 +109,11 @@
       <hr>
 
       <footer>
+        <p>
+          <%= link_to(@agency.name, agency_path(@agency)) if @agency %> /
+          <%= link_to(@campaign.name, agency_campaign_path(@campaign.agency, @campaign)) if @campaign %>
+        </p>
+
         <p>&copy; Velociraptor 2013</p>
       </footer>
     </div>

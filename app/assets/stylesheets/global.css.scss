@@ -105,17 +105,21 @@ p {
     color:#fff;
     opacity:0.9;
     text-align:center;
-    font-size:65px;
 
     i {
       display:none;
+    }
+
+    em {
+      font-size:70%;
+      font-style:normal;
     }
   }
 
   ul {
     padding:0;
-    margin:60px 0 0;
-    /*margin:30px 0 0;*/
+    /*margin:60px 0 0;*/
+    margin:30px 0 0;
     list-style-type: none;
   }
 
@@ -123,15 +127,65 @@ p {
     margin:0;
     padding:0;
     float:left;
-  }
 
-  a {
-    font-size:14px;
-    color:#fff;
-    display:inline-block;
-    padding:12px 20px;
-    background:#E74C3C;
-    border-right:3px solid #C0392B;
+    a {
+      font-size:14px;
+      color:#fff;
+      display:inline-block;
+      padding:12px 20px;
+      background:#E74C3C;
+      border-right:3px solid #C0392B;
+    }
+
+    a {
+      background:#2ECC71;
+      border-right:3px solid #27AE60;
+    }
+
+    a {
+      background:#F1C40F;
+      border-right:3px solid #F39C12;
+    }
+
+    a {
+      background:#34495E;
+      border-right:3px solid #2C3E50;
+    }
+
+    a {
+      background:#E74C3C;
+      border-right:3px solid #C0392B;
+    }
+
+    a {
+      background:#3498DB;
+      border-right:3px solid #2980B9;
+    }
+
+    a {
+      background:#E67E22;
+      border-right:3px solid #D35400;
+    }
+
+    a {
+      background:#1abc9c;
+      border-right:3px solid #16A085;
+    }
+
+    a:hover {
+      background:#20D3AF;
+    }
+
+    a.active,
+    li:last-child a.active {
+      background:#2ECC71;
+      background:#fff;
+      color:#1abc9c;
+    }
+
+    a.active:hover {
+      background:#fff;
+    }
   }
 
   li:first-child a {
@@ -147,56 +201,6 @@ p {
       background:#F1C40F;
       border-right:none;
     }
-  }
-
-  a {
-    background:#2ECC71;
-    border-right:3px solid #27AE60;
-  }
-
-  a {
-    background:#F1C40F;
-    border-right:3px solid #F39C12;
-  }
-
-  a {
-    background:#34495E;
-    border-right:3px solid #2C3E50;
-  }
-
-  a {
-    background:#E74C3C;
-    border-right:3px solid #C0392B;
-  }
-
-  a {
-    background:#3498DB;
-    border-right:3px solid #2980B9;
-  }
-
-  a {
-    background:#E67E22;
-    border-right:3px solid #D35400;
-  }
-
-  a {
-    background:#1abc9c;
-    border-right:3px solid #16A085;
-  }
-
-  a:hover {
-    background:#20D3AF;
-  }
-
-  a.active,
-  li:last-child a.active {
-    background:#2ECC71;
-    background:#fff;
-    color:#1abc9c;
-  }
-
-  a.active:hover {
-    background:#fff;
   }
 }
 

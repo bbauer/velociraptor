@@ -1,2 +1,21 @@
-<h1>Agencies#show</h1>
-<p>Find me in app/views/agencies/show.html.erb</p>
+<div class="row">
+  <div class="col-md-4">
+    <h5>Campaigns</h5>
+
+    <% @agency.campaigns.each do |campaign| %>
+      <div class="velocibox">
+        <i class="fa fa-bookmark-o"></i> <%= link_to(campaign.name, agency_campaign_path(@agency, campaign)) %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="col-md-4">
+    <h5>Consultants</h5>
+
+    <% @consultants.each do |consultant| %>
+      <div class="velocibox">
+        <i class="fa fa-user"></i> <%= consultant.name %>
+      </div>
+    <% end %>
+  </div>
+</div>

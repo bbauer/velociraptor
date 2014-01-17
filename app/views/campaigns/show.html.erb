@@ -1,2 +1,44 @@
-<h1>Campaigns#show</h1>
-<p>Find me in app/views/campaigns/show.html.erb</p>
+<div id="dashboard">
+  <div class="row dash">
+    <div class="col-md-8">
+      <h4>Recent Metrics</h4>
+
+      <div id="areachart" class="velocibox chart"></div>
+      <%#<div class="velocibox chart">%>
+        <%#= render "table" %>
+      <%#</div>%>
+    </div>
+
+    <div class="col-md-4 right-col">
+      <div class="login-form">
+        <%= form_for("post", url: agency_campaign_posts_path(@campaign.agency, @campaign), method: :post) do |f| %>
+          <div class="form-group comment-field">
+            <%= f.text_area :comment, class: "form-control", placeholder: "Post a Note" %>
+          </div>
+
+          <%= f.hidden_field :campaign_id, value: @campaign.id  %>
+          <%= f.hidden_field :user_id, value: current_user.id  %>
+
+          <%= f.submit 'Post', class: "btn btn-primary btn-block" %>
+        <% end %>
+      </div>
+
+      <div id="collabofeed">
+        <% @campaign.posts.reverse.each do |post| %>
+          <div class="velocibox post">
+            <%= link_to "<i class='fa fa-trash-o trash'></i>".html_safe, agency_campaign_post_path(@campaign.agency, @campaign, post.id), confirm: "Are you sure?", method: :delete %>
+
+            <div class="post-details">
+              <i class="fa fa-clock-o"></i> <%= post.created_at.strftime("%B %d, %Y") %> by
+              <em><%= post.user.name %></em>
+            </div>
+
+            <div class="post-comment">
+              <%= post.comment %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
