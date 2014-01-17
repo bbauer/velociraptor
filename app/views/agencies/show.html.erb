@@ -1,10 +1,11 @@
-<div class="row">
+<div class="row home-dash">
   <div class="col-md-4">
     <h5>Campaigns</h5>
 
     <% @agency.campaigns.each do |campaign| %>
+      <%#= link_to("<i class='fa fa-bookmark-o'></i> #{campaign.name}".html_safe, agency_campaign_path(@agency, campaign), class: "velocibox") %>
       <div class="velocibox">
-        <i class="fa fa-bookmark-o"></i> <%= link_to(campaign.name, agency_campaign_path(@agency, campaign)) %>
+        <i class='fa fa-bookmark-o'></i> <%= link_to campaign.name, agency_campaign_path(@agency, campaign) %>
       </div>
     <% end %>
   </div>

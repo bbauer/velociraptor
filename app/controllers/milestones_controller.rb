@@ -1,7 +1,11 @@
 class MilestonesController < ApplicationController
   before_filter :authenticate_user!
 
+  add_breadcrumb "home", :root_path
+  add_breadcrumb "campaign", :agency_campaign_path
+
   def index
+    add_breadcrumb "milestones", :agency_campaign_milestones_path
     @agency = Agency.find_by_slug(params[:agency_id])
     @campaign = Campaign.find params[:campaign_id]
     @milestones = @campaign.milestones

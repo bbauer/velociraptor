@@ -16,6 +16,9 @@ gem 'devise'
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'active_link_to'
 gem 'friendly_id'
+gem 'resque'
+gem 'resque-scheduler'
+gem 'breadcrumbs_on_rails'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
