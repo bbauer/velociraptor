@@ -1,6 +1,6 @@
-.social-feed {
+#social-feed {
   .velocibox {
-    border:1px solid #eee;
+    border:1px solid #e6e6e6;
     font-size:14px;
     color:#666;
 
@@ -20,6 +20,25 @@
       margin-right:10px;
       width:25px;
       border:1px solid #aaa;
+    }
+  }
+
+  .social-header {
+    .velocibox {
+      padding: 60px;
+      margin-bottom:20px;
+    }
+  }
+
+  h4 {
+    line-height:40px;
+
+    strong {
+      color:#555;
+    }
+
+    small {
+      color:#ccc;
     }
   }
 
