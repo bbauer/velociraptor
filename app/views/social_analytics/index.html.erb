@@ -17,7 +17,7 @@
         <div class="velocibox">
           <i class="fa fa-user"></i>
           by <%= post.user %> on <%= post.date %>
-          <p><%= post.content.html_safe %></p>
+          <p><%= (ActionView::Base.full_sanitizer.sanitize post.content).html_safe %></p>
         </div>
       <% end %>
     </div>
@@ -27,9 +27,15 @@
 
       <% @google_plus.each do |post| %>
         <div class="velocibox">
-          <%= image_tag post.user_image %>
-          by <%= link_to post.user, post.url %> on <%= post.date %>
-          <p><%= post.content.html_safe %></p>
+          <i class="fa fa-user"></i>
+
+          by <%= post.user %> on <%= post.date %>
+
+          <% if post.url %>
+            <p><%= link_to "View Link", post.url %></p>
+          <% end %>
+
+          <p><%= (ActionView::Base.full_sanitizer.sanitize post.content).html_safe %></p>
         </div>
       <% end %>
     </div>
@@ -42,8 +48,14 @@
 
         <div class="velocibox">
           <i class="fa fa-user"></i>
+
           by <%= post.user %> on <%= post.date %>
-          <p><%= post.content.html_safe %></p>
+
+          <% if post.url %>
+            <p><%= link_to "View Link", post.url %></p>
+          <% end %>
+
+          <p><%= (ActionView::Base.full_sanitizer.sanitize post.content).html_safe %></p>
         </div>
       <% end %>
     </div>

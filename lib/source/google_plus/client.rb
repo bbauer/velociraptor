@@ -45,6 +45,8 @@ protected
   end
 
   def process_search(search)
+    return [] unless search.items
+
     search.items.map do |item|
       post(item) if item.object.content.present?
     end

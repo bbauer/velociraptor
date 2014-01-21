@@ -1,5 +1,6 @@
 class MilestonesController < ApplicationController
   before_filter :authenticate_user!
+  before_filter :check_permission
 
   add_breadcrumb "home", :root_path
   add_breadcrumb "campaign", :agency_campaign_path

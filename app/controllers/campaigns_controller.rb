@@ -24,12 +24,4 @@ class CampaignsController < ApplicationController
   rescue ActiveRecord::RecordNotFound
     redirect_to agency_path(@agency)
   end
-
-protected
-
-  def check_permission
-    if client && current_user.campaign_id != params[:id].to_i
-      redirect_to agency_campaign_path(agency, campaign)
-    end
-  end
 end
