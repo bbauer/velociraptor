@@ -6,6 +6,8 @@ class SocialAnalyticsController < ApplicationController
     @agency = Agency.find_by_slug(params[:agency_id])
     @campaign = Campaign.find(params[:campaign_id])
     @posts = posts
+    @twitter = @posts.select { |post| post.source == "Twitter" }
+    @google_plus = @posts.select { |post| post.source == "Google Plus" }
   end
 
 protected

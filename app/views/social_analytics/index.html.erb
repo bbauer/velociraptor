@@ -1,24 +1,38 @@
 <div class="row">
   <div class="col-md-12">
-    <h4>Recent Social Aggregation</h4>
-    <p>This is a a feed of social activity based on your keywords <strong>"<%= @campaign.social_keywords %>"</strong>. The feed is updated every 3 hours.</p>
+    <div class="velocibox center">
+      This is a feed of social activity based on your keywords <strong>"<%= @campaign.social_keywords %>"</strong>. The feed is updated every 3 hours.
+    </div>
   </div>
 </div>
 
 <div class="row social-feed">
-  <div class="col-md-12">
-    <% @posts.each do |post| %>
+  <div class="col-md-4">
+    <h6><i class="fa fa-twitter"></i> Twitter</h6>
 
+    <% @twitter.each do |post| %>
       <div class="velocibox">
-        <% if post.source == "Twitter" %>
-          <i class="fa fa-twitter"></i>
-        <% else %>
-          <i class="fa fa-google-plus-square"></i>
-        <% end %>
-
+        <i class="fa fa-user"></i>
         by <%= post.user %> on <%= post.date %>
         <p><%= post.content.html_safe %></p>
       </div>
     <% end %>
+  </div>
+
+  <div class="col-md-4">
+    <h6><i class="fa fa-google-plus-square"></i> Google Plus</h6>
+
+    <% @google_plus.each do |post| %>
+      <div class="velocibox">
+        <i class="fa fa-user"></i>
+        by <%= post.user %> on <%= post.date %>
+        <p><%= post.content.html_safe %></p>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="col-md-4">
+    <h6><i class="fa fa-facebook-square"></i> Facebook</h6>
+    <div class="velocibox">Facebook is currently being a dick</div>
   </div>
 </div>
