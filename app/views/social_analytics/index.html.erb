@@ -24,8 +24,8 @@
 
     <% @google_plus.each do |post| %>
       <div class="velocibox">
-        <i class="fa fa-user"></i>
-        by <%= post.user %> on <%= post.date %>
+        <%= image_tag post.user_image %>
+        by <%= link_to post.user, post.url %> on <%= post.date %>
         <p><%= post.content.html_safe %></p>
       </div>
     <% end %>
