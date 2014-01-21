@@ -36,7 +36,16 @@
 
     <div class="col-md-4">
       <h6><i class="fa fa-facebook-square"></i> Facebook</h6>
-      <div class="velocibox">Facebook is currently being a dick</div>
+
+      <% @facebook.each do |post| %>
+        <% next unless post.content.present? %>
+
+        <div class="velocibox">
+          <i class="fa fa-user"></i>
+          by <%= post.user %> on <%= post.date %>
+          <p><%= post.content.html_safe %></p>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

@@ -6,8 +6,9 @@ class SocialAnalyticsController < ApplicationController
     @agency = Agency.find_by_slug(params[:agency_id])
     @campaign = Campaign.find(params[:campaign_id])
     @posts = posts
-    @twitter = @posts.select { |post| post.source == "Twitter" }
-    @google_plus = @posts.select { |post| post.source == "Google Plus" }
+    @twitter = posts_for("Twitter")
+    @google_plus = posts_for("Google Plus")
+    @facebook = posts_for("Facebook")
   end
 
 protected
@@ -20,6 +21,10 @@ protected
       Rails.cache.write("#{campaign.id}_social_posts", data, expires_in: 3.hours)
       Rails.cache.read("#{campaign.id}_social_posts")
     end
+  end
+
+  def posts_for(source)
+    @posts.select { |post| post.source == source }
   end
 
   def check_permission
