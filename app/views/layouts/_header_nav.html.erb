@@ -1,0 +1,13 @@
+<div class="btn-toolbar pull-right top-nav">
+  <div class="btn-group">
+    <div class="btn btn-primary">
+      <i class="fa fa-user"></i> Hello <%= current_user.first_name %>!
+    </div>
+
+    <%= link_to icon("fa-sign-out", "Logout"), destroy_user_session_path, method: :delete, class: "btn btn-inverse" %>
+
+    <% if current_user.admin %>
+      <%= link_to icon("fa-cog", "Settings"), admin_dashboard_path, class: "btn btn-inverse" %>
+    <% end %>
+  </div>
+</div>

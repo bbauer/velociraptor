@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140116224931) do
+ActiveRecord::Schema.define(version: 20140121165344) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 20140116224931) do
     t.string   "agency_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "social_keywords"
   end
 
   create_table "friendly_id_slugs", force: true do |t|
@@ -89,9 +90,13 @@ ActiveRecord::Schema.define(version: 20140116224931) do
   create_table "twitters", force: true do |t|
     t.string   "username"
     t.string   "password"
-    t.integer  "client_id"
+    t.integer  "campaign_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "api_key"
+    t.string   "api_secret"
+    t.string   "oauth_token"
+    t.string   "oauth_secret"
   end
 
   create_table "users", force: true do |t|

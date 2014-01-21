@@ -1,0 +1,12 @@
+<div id="dashboard-nav">
+  <div class="container">
+    <h1 ><%= @agency.name %></h1>
+
+    <nav>
+      <ul>
+        <li><%= active_link_to icon("fa-cogs", "Agency Dashboard"), agency_path(@agency), active: :exclusive %></li>
+        <li><%= active_link_to icon("fa-clipboard", "Agency Reports"), "#", active: :exclusive %></li>
+      </ul>
+    </nav>
+  </div>
+</div>

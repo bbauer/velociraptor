@@ -27,6 +27,7 @@ protected
   end
 
   def campaign
-    Campaign.find(current_user.campaign_id) if current_user
+    campaign_id = current_user.campaign_id || agency.campaigns.first.id
+    Campaign.find(campaign_id) if current_user
   end
 end
