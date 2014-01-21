@@ -1,5 +1,5 @@
 class Source::Facebook::Client
-  ACCESS_TOKEN = "CAACEdEose0cBAJ10ZB3hZADaZAz20wZBDrLj0cqWBWQwR8UDwcVtklhJ01Rnl7s4Fm7xjHXtuvZB48lL84D2LIsej9FmJuNyzXZA5T8CqPKoU3hJmBEvM7eglZCr3EBuDayCy9ZBdvqZAxIgNyqDYdiOAQJ5ZBwPK7IO7bufSSk1XLC1ZBaoXnx15869ScFhi8uzaUZD"
+  ACCESS_TOKEN = "CAACEdEose0cBALsiP970u8O4IQRLPORinZBTl1ZBRwjUy7NVc1nfeoC1pqIZCFsJgddG9Obn2Vtu8h5vNlnGsUhtY7w4nrvIVhzSa6eEkbGS1s5wLN9iWLFFXxbsDaaXaH7ZCzC2bEg6UChS6zRqsFbvzR3veFbFm4mUuVeZBQAAZBohwVzN2wGELsdRorxvoZD"
   ENDPOINT = "https://graph.facebook.com/search"
 
   def initialize(campaign)

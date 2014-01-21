@@ -5,15 +5,12 @@ class SocialAnalyticsController < ApplicationController
   def index
     @agency = Agency.find_by_slug(params[:agency_id])
     @campaign = Campaign.find(params[:campaign_id])
-    @posts = Source::SocialFetcher.new(@campaign).fetch
-    @twitter = posts_for("Twitter")
-    @google_plus = posts_for("Google Plus")
-    @facebook = posts_for("Facebook")
+    @posts = Source::SocialDataManager.new(@campaign).fetch_data
   end
 
-protected
-
-  def posts_for(source)
-    @posts.select { |post| post.source == source }
+  def refresh
+    @campaign = Campaign.find(params[:campaign_id])
+    Source::SocialDataManager.new(@campaign).refresh_data
+    redirect_to agency_campaign_social_analytics_path(@campaign.agency, @campaign)
   end
 end

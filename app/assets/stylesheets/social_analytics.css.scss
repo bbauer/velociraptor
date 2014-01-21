@@ -26,7 +26,7 @@
 
   .social-header {
     .velocibox {
-      padding: 50px;
+      padding: 40px;
       margin-bottom:20px;
 
       img {
@@ -46,18 +46,37 @@
         top:70px;
       }
     }
+
+    .btn {
+      padding:5px 10px;
+      margin:0 0 0 7px;
+
+      i.fa {
+        font-size:16px;
+        padding:0;
+        color:#fff;
+        opacity:0.5;
+      }
+    }
   }
 
   h4 {
     line-height:40px;
+    margin-top:0;
 
     strong {
       color:#555;
     }
+  }
 
-    small {
-      color:#ccc;
-    }
+  .social-refresh {
+    display:inline-block;
+    padding:15px 25px;
+    border-radius:4px;
+    background:#fff;
+    color:#aaa;
+    font-size:17px;
+    border:1px solid #eee;
   }
 
   h6 {

@@ -3,7 +3,7 @@ Velociraptor::Application.routes.draw do
   ActiveAdmin.routes(self)
 
   get "home/index"
-
+  get "social_analytics/:campaign_id/refresh" => "social_analytics#refresh"
 
   resources :agencies, only: [:show, :index] do
     resources :campaigns, only: [:index, :show] do

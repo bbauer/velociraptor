@@ -1,0 +1,11 @@
+<% if post.content.present? %>
+  <div class="velocibox">
+    <i class="fa fa-user"></i> by <%= post.user %> on <%= post.date %>
+
+    <% if post.url %>
+      <p><%= link_to "View Link", post.url %></p>
+    <% end %>
+
+    <p><%= (ActionView::Base.full_sanitizer.sanitize post.content).html_safe %></p>
+  </div>
+<% end %>

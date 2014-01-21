@@ -1,10 +1,25 @@
 <div id="social-feed">
+  <div class="row">
+    <div class="col-md-12">
+    </div>
+  </div>
+
   <div class="row social-header">
     <div class="col-md-12">
       <div class="velocibox center">
         <%= image_tag("Chat.png", class: "left") %>
         <%= image_tag("Watches.png", class: "right") %>
-        <h4>Your feed of social activity based on<br /><strong>"<%= @campaign.social_keywords %>"</strong>.<br /><small>Updated every 3 hours.</small></h4>
+        <h4>
+          Your feed of social activity based on<br />
+          <strong>"<%= @campaign.social_keywords %>"</strong><br />
+        </h4>
+
+        <div class="social-refresh">
+          Updated every 3 hours.
+          <%= link_to icon("fa-refresh", "Refresh Now"),
+                      { controller: "social_analytics", action: "refresh" },
+                      class: "btn btn-danger" %>
+        </div>
       </div>
     </div>
   </div>
@@ -13,50 +28,24 @@
     <div class="col-md-4">
       <h6><i class="fa fa-twitter"></i> Twitter</h6>
 
-      <% @twitter.each do |post| %>
-        <div class="velocibox">
-          <i class="fa fa-user"></i>
-          by <%= post.user %> on <%= post.date %>
-          <p><%= (ActionView::Base.full_sanitizer.sanitize post.content).html_safe %></p>
-        </div>
+      <% @posts.select { |post| post.source == "Twitter" }.each do |post| %>
+        <%= render "social_post", post: post %>
       <% end %>
     </div>
 
     <div class="col-md-4">
       <h6><i class="fa fa-google-plus-square"></i> Google Plus</h6>
 
-      <% @google_plus.each do |post| %>
-        <div class="velocibox">
-          <i class="fa fa-user"></i>
-
-          by <%= post.user %> on <%= post.date %>
-
-          <% if post.url %>
-            <p><%= link_to "View Link", post.url %></p>
-          <% end %>
-
-          <p><%= (ActionView::Base.full_sanitizer.sanitize post.content).html_safe %></p>
-        </div>
+      <% @posts.select { |post| post.source == "Google Plus" }.each do |post| %>
+        <%= render "social_post", post: post %>
       <% end %>
     </div>
 
     <div class="col-md-4">
       <h6><i class="fa fa-facebook-square"></i> Facebook</h6>
 
-      <% @facebook.each do |post| %>
-        <% next unless post.content.present? %>
-
-        <div class="velocibox">
-          <i class="fa fa-user"></i>
-
-          by <%= post.user %> on <%= post.date %>
-
-          <% if post.url %>
-            <p><%= link_to "View Link", post.url %></p>
-          <% end %>
-
-          <p><%= (ActionView::Base.full_sanitizer.sanitize post.content).html_safe %></p>
-        </div>
+      <% @posts.select { |post| post.source == "Facebook" }.each do |post| %>
+        <%= render "social_post", post: post %>
       <% end %>
     </div>
   </div>

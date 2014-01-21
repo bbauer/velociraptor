@@ -1,11 +1,11 @@
-class Source::SocialFetcher
-  CACHE_EXPIRATION = 3.hours
+class Source::SocialDataManager
+  CACHE_EXPIRATION = 7.days
 
   def initialize(campaign)
     @campaign = campaign
   end
 
-  def fetch
+  def fetch_data
     if cached_data = read_cache
       cached_data
     else
@@ -14,10 +14,19 @@ class Source::SocialFetcher
     end
   end
 
+  def refresh_data
+    reset_cache
+    write_cache
+  end
+
 protected
 
   def read_cache
     Rails.cache.read(key)
+  end
+
+  def reset_cache
+    Rails.cache.write(key, nil, expires_in: CACHE_EXPIRATION)
   end
 
   def write_cache
