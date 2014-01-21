@@ -7,7 +7,10 @@ class Source::GooglePlus::Client
 
   def search(query=@query)
     return [] unless query.present?
-    query.split(",").map { |terms| process_search(GooglePlus::Activity.search(terms)) }.flatten
+
+    query.split(",").map do |terms|
+      process_search(GooglePlus::Activity.search(terms))
+    end.flatten
   end
 
   def user(id)
@@ -24,17 +27,26 @@ protected
     google_plus.keywords
   end
 
+  def post(item)
+    OpenStruct.new(
+      source: "Google Plus",
+      content: item.object.content,
+      id: item.id,
+      url: item.url,
+      date: Date.parse(item.published),
+      user: item.actor.display_name,
+      user_id: item.actor.id,
+      user_image: item.actor.image.url
+    )
+  end
+
   def google_plus
     @google_plus ||= @campaign.google_plus
   end
 
   def process_search(search)
     search.items.map do |item|
-      if item.object.content.present?
-        item.object.content
-      else
-        item.object.attachments.first["content"]
-      end
+      post(item) if item.object.content.present?
     end
   end
 end

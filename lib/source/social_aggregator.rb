@@ -6,7 +6,7 @@ class Source::SocialAggregator
   end
 
   def aggregate
-    twitter_posts + google_plus_posts
+    (@twitter.search + @google_plus.search).compact
   end
 
 protected

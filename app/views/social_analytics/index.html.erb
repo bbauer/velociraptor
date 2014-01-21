@@ -8,9 +8,16 @@
 <div class="row social-feed">
   <div class="col-md-12">
     <% @posts.each do |post| %>
+
       <div class="velocibox">
-        <strong><%= post[:source] %>:</strong>
-        <%= post[:content].html_safe %>
+        <% if post.source == "Twitter" %>
+          <i class="fa fa-twitter"></i>
+        <% else %>
+          <i class="fa fa-google-plus-square"></i>
+        <% end %>
+
+        by <%= post.user %> on <%= post.date %>
+        <p><%= post.content.html_safe %></p>
       </div>
     <% end %>
   </div>

@@ -42,7 +42,19 @@ protected
 
   def query_for(terms)
     response = request("#{ENDPOINT}search/tweets.json?q=#{URI::encode(terms)}")
-    response.first.second.collect { |tweet| tweet["text"] }
+    response.first.second.map { |object| tweet(object) }
+  end
+
+  def tweet(object)
+    OpenStruct.new(
+      source: "Twitter",
+      content: object["text"],
+      id: object["id"],
+      date: Date.parse(object["created_at"]),
+      user: object["user"]["screen_name"],
+      user_id: object["user"]["id"],
+      user_image: nil
+    )
   end
 
   def timeline_for(type)
