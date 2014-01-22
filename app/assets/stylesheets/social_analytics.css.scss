@@ -30,15 +30,20 @@
       margin-bottom:20px;
 
       img {
-        max-width:120px;
-        max-height:120px;
+        max-width:140px;
+        max-height:140px;
         border:none;
         position:absolute;
       }
 
       img.left {
+        left:-61px;
+        top:230px;
         left:90px;
         top:70px;
+        left: 281px;
+        top: 22px;
+        opacity: 0.15;
       }
 
       img.right {
