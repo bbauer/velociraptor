@@ -1,5 +1,5 @@
 class Source::SocialDataManager
-  CACHE_EXPIRATION = 7.days
+  CACHE_EXPIRATION = 3.hours
 
   def initialize(campaign)
     @campaign = campaign

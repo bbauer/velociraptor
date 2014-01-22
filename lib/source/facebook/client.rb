@@ -1,6 +1,6 @@
 class Source::Facebook::Client
-  ACCESS_TOKEN = "CAACEdEose0cBALsiP970u8O4IQRLPORinZBTl1ZBRwjUy7NVc1nfeoC1pqIZCFsJgddG9Obn2Vtu8h5vNlnGsUhtY7w4nrvIVhzSa6eEkbGS1s5wLN9iWLFFXxbsDaaXaH7ZCzC2bEg6UChS6zRqsFbvzR3veFbFm4mUuVeZBQAAZBohwVzN2wGELsdRorxvoZD"
   ENDPOINT = "https://graph.facebook.com/search"
+  ACCESS_TOKEN = "121584141274833|b0d3826624470f5f5c3e70ce70893ed4"
 
   def initialize(campaign)
     @campaign = campaign
@@ -15,7 +15,7 @@ class Source::Facebook::Client
 protected
 
   def request(query)
-    uri = "#{ENDPOINT}?q=#{URI::encode(query)}&access_token=#{ACCESS_TOKEN}"
+    uri = URI::encode("#{ENDPOINT}?q=#{query}&access_token=#{ACCESS_TOKEN}")
     JSON.parse(HTTParty.get(uri).body)
   end
 

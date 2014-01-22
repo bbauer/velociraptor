@@ -22,7 +22,6 @@ gem 'resque-scheduler'
 gem 'breadcrumbs_on_rails'
 gem 'draper'
 gem 'google_plus'
-gem 'fb_graph'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
