@@ -1,6 +1,6 @@
 class Source::Facebook::Client
   ENDPOINT = "https://graph.facebook.com/search"
-  ACCESS_TOKEN = "121584141274833|b0d3826624470f5f5c3e70ce70893ed4"
+  ACCESS_TOKEN = "#{ENV["FACEBOOK_ID"]}|#{ENV["FACEBOOK_SECRET"]}"
 
   def initialize(campaign)
     @campaign = campaign
