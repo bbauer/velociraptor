@@ -8,14 +8,6 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require bootstrap
- *= require flat-ui
- *= require jquery.dataTables
  *= require_self
- *= require_tree .
- *= require global
- *= require dashboard
- *= require font-awesome
- *= require morris
- *= require milestones
+ *= require admin
  */
